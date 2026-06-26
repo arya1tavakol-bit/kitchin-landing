@@ -11,8 +11,8 @@ import {
   Truck,
 } from "lucide-react";
 const homeShot = "/mockups/home.png?v=3";
-const inventoryShot = "/mockups/inventory.png";
-const recipesShot = "/mockups/recipes.png";
+const inventoryShot = "/mockups/inventory.png?v=2";
+const recipesShot = "/mockups/recipes.png?v=2";
 const scanShot = "/mockups/scan.png";
 
 /* ------------------------------------------------------------------ */
@@ -421,7 +421,7 @@ const STEPS = [
     title: "Cook before it expires",
     copy: "Recipes that use what's about to go bad, not what's on a stock photo.",
     img: recipesShot,
-    alt: "Kitchin recipes screen on an iPhone, with an Ask Kitchin prompt and suggestion chips like quick dinner and high protein.",
+    alt: "Kitchin recipes screen on an iPhone, showing a Spinach & Cheddar Omelet with ingredients, steps, and recipe suggestions.",
   },
 ];
 
@@ -429,7 +429,7 @@ function HowItWorks() {
   return (
     <section id="how" className="bg-page py-20 sm:py-24">
       <div className="shell">
-        <div className="max-w-2xl">
+        <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-[clamp(28px,5vw,46px)] font-extrabold tracking-tight text-ink">
             From receipt to recipes in three steps.
           </h2>
