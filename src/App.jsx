@@ -11,9 +11,9 @@ import {
   Truck,
 } from "lucide-react";
 const homeShot = "/mockups/home.png?v=3";
-const inventoryShot = "/mockups/inventory.png?v=2";
-const recipesShot = "/mockups/recipes.png?v=2";
-const scanShot = "/mockups/scan.png?v=2";
+const inventoryShot = "/mockups/inventory.png?v=3";
+const recipesShot = "/mockups/recipes.png?v=3";
+const scanShot = "/mockups/scan.png?v=3";
 
 /* ------------------------------------------------------------------ */
 /* Motion helpers                                                      */
