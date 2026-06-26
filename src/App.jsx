@@ -10,7 +10,7 @@ import {
   Leaf,
   Truck,
 } from "lucide-react";
-const homeShot = "/mockups/home.png?v=2";
+const homeShot = "/mockups/home.png?v=3";
 const inventoryShot = "/mockups/inventory.png";
 const recipesShot = "/mockups/recipes.png";
 const scanShot = "/mockups/scan.png";
@@ -226,7 +226,9 @@ function Nav() {
           <button
             type="button"
             onClick={() => setOpen(true)}
-            className="rounded-lg p-2 text-ink md:hidden"
+            className={`rounded-lg p-2 md:hidden ${
+              scrolled ? "text-ink" : "text-white"
+            }`}
             aria-label="Open menu"
             aria-expanded={open}
           >
@@ -237,8 +239,8 @@ function Nav() {
 
       {/* Full-screen mobile overlay */}
       {open && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-page md:hidden">
-          <div className="shell flex h-16 items-center justify-between">
+        <div className="mobile-menu fixed inset-0 z-50 flex flex-col bg-page md:hidden">
+          <div className="shell flex h-16 shrink-0 items-center justify-between">
             <Logo />
             <button
               type="button"
@@ -249,7 +251,7 @@ function Nav() {
               <X size={24} />
             </button>
           </div>
-          <div className="flex flex-1 flex-col justify-center gap-2 px-8">
+          <div className="mobile-menu-links flex flex-col gap-3 px-8 pb-10 pt-6">
             {NAV_LINKS.map((l) => (
               <a
                 key={l.href}
@@ -262,7 +264,7 @@ function Nav() {
             ))}
             <DownloadSoonButton
               variant="dark"
-              className="mt-8 w-full justify-center !px-5 !py-4 !text-base"
+              className="mt-6 w-full justify-center !px-5 !py-4 !text-base"
             />
           </div>
         </div>
@@ -295,6 +297,7 @@ function Hero() {
               "Scan a receipt to auto-fill your pantry, no typing",
               "Get warned before anything expires",
               "Cook recipes from what you already own",
+              "Smart restock low items with Instacart in one tap",
             ].map((t) => (
               <li key={t} className="flex items-start gap-2.5 text-[16px] leading-relaxed text-ink">
                 <Check size={20} strokeWidth={2.6} className="mt-[2px] shrink-0 text-primary" />
@@ -331,7 +334,7 @@ const REVIEWS = [
   },
   {
     quote:
-      "Two weeks in and we're throwing away less. The expiry alerts alone changed how we shop for the week.",
+      "Two weeks in and we saved about $40 just by using what we already had. The expiry alerts alone changed how we shop for the week.",
     name: "Sam & Alex",
     role: "TestFlight beta · Couple",
     img: "/avatars/avatar-couple.png",
@@ -442,13 +445,15 @@ function HowItWorks() {
               delay={i * 120}
               className="flex flex-col items-center text-center"
             >
-              <img
-                src={img}
-                alt={alt}
-                className="w-auto h-[clamp(420px,62vw,560px)] select-none transition-transform duration-500 ease-out hover:-translate-y-2 [filter:drop-shadow(0_25px_38px_rgba(20,41,32,0.16))]"
-                loading="lazy"
-                decoding="async"
-              />
+              <div className="mx-auto h-[clamp(400px,58vw,540px)] w-[clamp(190px,27.5vw,252px)]">
+                <img
+                  src={img}
+                  alt={alt}
+                  className="h-full w-full object-contain object-bottom select-none transition-transform duration-500 ease-out hover:-translate-y-2 [filter:drop-shadow(0_25px_38px_rgba(20,41,32,0.16))]"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
               <div className="mt-8 max-w-xs">
                 <span className="font-display text-[13px] font-bold text-bright">
                   {n}
@@ -591,7 +596,7 @@ function Integration() {
 const STATS = [
   { value: "$1,200", label: "saved on groceries every year" },
   { value: "100 lbs", label: "of food kept out of the landfill" },
-  { value: "5 hrs", label: "of meal planning saved each month" },
+  { value: "15 hrs", label: "saved each month" },
 ];
 
 function Metric() {
@@ -691,7 +696,7 @@ function FinalCta() {
     <section id="download" className="bg-[#2A6249] py-24 sm:py-32">
       <div className="shell flex flex-col items-center text-center">
         <h2 className="max-w-2xl font-display text-[clamp(30px,5.5vw,52px)] font-extrabold leading-[1.05] tracking-tight text-white">
-          Your freshest kitchen starts tonight.
+          Save food, save money, save time with Kitchin
         </h2>
         <div className="mt-10">
           <DownloadSoonButton />
