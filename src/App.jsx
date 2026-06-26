@@ -13,7 +13,7 @@ import {
 const homeShot = "/mockups/home.png?v=3";
 const inventoryShot = "/mockups/inventory.png?v=2";
 const recipesShot = "/mockups/recipes.png?v=2";
-const scanShot = "/mockups/scan.png";
+const scanShot = "/mockups/scan.png?v=2";
 
 /* ------------------------------------------------------------------ */
 /* Motion helpers                                                      */
