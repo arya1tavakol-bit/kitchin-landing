@@ -10,7 +10,7 @@ import {
   Leaf,
   Truck,
 } from "lucide-react";
-const homeShot = "/mockups/home.png";
+const homeShot = "/mockups/home.png?v=2";
 const inventoryShot = "/mockups/inventory.png";
 const recipesShot = "/mockups/recipes.png";
 const scanShot = "/mockups/scan.png";
